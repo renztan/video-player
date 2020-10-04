@@ -1,10 +1,11 @@
 {
-	"name": "IVS_Video_Player",
+	"name": "video_player",
 	"version": "1.0.0",
 	"description": "A video player with a sample advert. For IVS Frontend Exam",
 	"main": "index.js",
 	"scripts": {
-		"start": "webpack --mode development --watch",
+		"start": "webpack",
+		"dev": "webpack --mode development --watch",
 		"test-tdd": "jest --watch"
 	},
 	"keywords": [],
