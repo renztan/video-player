@@ -48,7 +48,7 @@ body {
 	position: relative;
 	width: 100%;
 	max-width: 960px;
-	box-shadow: 0 10px 10px 2px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.25);
 }
 
 .video-player {
@@ -116,7 +116,7 @@ body {
 .video-player-wrapper .controls .controls-top .seekbar .seekbar-active {
 	background-color: var(--accent);
 	height: 100%;
-	width: 50%;
+	transition: 250ms width;
 }
 
 .video-player-wrapper .controls .controls-top .seekbar .ad-dot {
@@ -161,7 +161,7 @@ body {
 	content: '\f04b';
 }
 
-.video-player-wrapper .controls .controls-bottom .play-btn.paused::before {
+.video-player-wrapper .controls .controls-bottom .play-btn.playing::before {
 	content: '\f04c';
 }
 

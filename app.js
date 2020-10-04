@@ -1,5 +1,5 @@
-const init = () => {
-	console.log('Initialize Video player');
-};
+import VideoPlayer from './scripts/videoplayer';
 
-init();
+const videoPlayer = new VideoPlayer(
+	document.querySelector('.video-player-wrapper')
+);
