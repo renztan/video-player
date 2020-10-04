@@ -1,0 +1,210 @@
+/* Variables */
+:root {
+	--primary-dark: #512da8;
+	--primary: #673ab7;
+	--accent: #ffc107;
+	--gray: #757575;
+	--gray-light: #bdbdbd;
+}
+
+/* Globals */
+body {
+	font-family: 'Open Sans', sans-serif;
+	height: 100vh;
+}
+
+#app {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+	padding: 1.2rem 1rem;
+	background-color: var(--primary-dark);
+	color: white;
+}
+
+.navbar-title {
+	font-size: 1.2rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+/* Main Section */
+#main {
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: calc(100vw - 2rem);
+	background-color: var(--primary);
+	padding: 0 1rem;
+}
+
+/* Video Player */
+.video-player-wrapper {
+	position: relative;
+	width: 100%;
+	max-width: 960px;
+	box-shadow: 0 10px 10px 2px rgba(0, 0, 0, 0.25);
+}
+
+.video-player {
+	width: 100%;
+	outline: none;
+}
+
+.video-player-wrapper .video-overlay,
+.video-player-wrapper .controls {
+	position: absolute;
+	width: 100%;
+}
+
+.video-player-wrapper .video-overlay {
+	height: 100%;
+}
+
+.video-player-wrapper .video-overlay .advert {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	opacity: 0;
+	transition: 500ms opacity, 500ms top, 500ms left;
+	width: max(50px, 20%);
+	max-width: 150px;
+}
+
+@media screen and (min-width: 768px) {
+	.video-player-wrapper .video-overlay .advert {
+		top: 2rem;
+		left: 2rem;
+	}
+}
+
+.video-player-wrapper .video-overlay .advert.active {
+	opacity: 1;
+}
+
+.video-player-wrapper .video-overlay .advert .advert-image {
+	width: 100%;
+	height: auto;
+}
+
+.video-player-wrapper .controls {
+	bottom: 0;
+}
+
+.video-player-wrapper .controls .controls-top,
+.video-player-wrapper .controls .controls-bottom {
+	padding: 0.5rem 1rem;
+}
+
+.video-player-wrapper .controls .controls-bottom {
+	display: flex;
+	align-items: center;
+}
+
+.video-player-wrapper .controls .controls-top .seekbar {
+	position: relative;
+	height: 10px;
+	width: 100%;
+	background-color: var(--gray);
+}
+
+.video-player-wrapper .controls .controls-top .seekbar .seekbar-active {
+	background-color: var(--accent);
+	height: 100%;
+	width: 50%;
+}
+
+.video-player-wrapper .controls .controls-top .seekbar .ad-dot {
+	height: 10px;
+	width: 10px;
+	border-radius: 50%;
+	background-color: red;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.video-player-wrapper .controls .controls-bottom .btn {
+	outline: none;
+	flex-grow: 0;
+	height: 20px;
+	min-width: 20px;
+	background-color: transparent;
+	border: none;
+	color: white;
+}
+
+.video-player-wrapper .controls .controls-bottom .btn:hover::before {
+	color: var(--accent);
+}
+
+.video-player-wrapper .controls .controls-bottom .play-btn::before,
+.video-player-wrapper .controls .controls-bottom .mute-btn::before,
+.video-player-wrapper .controls .controls-bottom .fullscreen-btn::before {
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	font-family: 'Font Awesome 5 Free';
+	color: white;
+	font-weight: 600;
+	font-size: 1.2em;
+}
+
+.video-player-wrapper .controls .controls-bottom .play-btn::before {
+	content: '\f04b';
+}
+
+.video-player-wrapper .controls .controls-bottom .play-btn.paused::before {
+	content: '\f04c';
+}
+
+.video-player-wrapper .controls .controls-bottom .mute-btn::before {
+	content: '\f6a9';
+}
+
+.video-player-wrapper .controls .controls-bottom .mute-btn.unmuted::before {
+	content: '\f028';
+}
+
+.video-player-wrapper .controls .controls-bottom .fullscreen-btn::before {
+	content: '\f065';
+}
+
+.video-player-wrapper
+	.controls
+	.controls-bottom
+	.fullscreen-btn.active::before {
+	content: '\f066';
+}
+
+.video-player-wrapper .controls .controls-bottom .timestamp {
+	margin-left: 0.5rem;
+	color: #fff;
+	flex-grow: 1;
+}
+
+/* Footer */
+footer {
+	padding: 0.5rem;
+	background-color: var(--primary-dark);
+	color: white;
+	text-align: center;
+	font-weight: 300;
+	font-size: 0.8rem;
+}
+
+footer a {
+	color: var(--accent);
+	text-decoration: none;
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
