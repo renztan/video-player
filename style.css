@@ -56,6 +56,10 @@ body {
 	outline: none;
 }
 
+.video-player::-webkit-media-controls {
+	display: none;
+}
+
 .video-player-wrapper .video-overlay,
 .video-player-wrapper .controls {
 	position: absolute;
